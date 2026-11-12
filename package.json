@@ -6,10 +6,10 @@
   ],
   "scripts": {},
   "devDependencies": {
-    "@tsconfig/node22": "^22",
+    "@tsconfig/node24": "^24",
     "typescript": "^5"
   },
   "dependencies": {
-    "sst": "^3"
+    "sst": "^4"
   }
 }

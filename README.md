@@ -1,6 +1,6 @@
 # Monorepo Template
 
-A template to create a monorepo SST v3 project. [Learn more](https://sst.dev/docs/set-up-a-monorepo).
+A template to create a monorepo SST v4 project. [Learn more](https://sst.dev/docs/set-up-a-monorepo).
 
 ## Get started
 
@@ -28,26 +28,30 @@ A template to create a monorepo SST v3 project. [Learn more](https://sst.dev/doc
 
 5. Optionally, enable [_git push to deploy_](https://sst.dev/docs/console/#autodeploy).
 
+### Upgrading from v3
+
+If you deployed this template on SST v3, update `sst` to v4 and run `npx sst refresh` for each stage before you deploy. See the [v3 to v4 migration guide](https://sst.dev/docs/migrate-from-v3).
+
 ## Usage
 
-This template uses [npm Workspaces](https://docs.npmjs.com/cli/v8/using-npm/workspaces). It has 3 packages to start with and you can add more it.
+This template uses [npm Workspaces](https://docs.npmjs.com/cli/v8/using-npm/workspaces). It has 3 packages to start with and you can add more to it.
 
 1. `core/`
 
-   This is for any shared code. It's defined as modules. For example, there's the `Example` module.
+   This is for any shared code. It's organized into namespaces. For example, there's the `Example` namespace.
 
    ```ts
-   export module Example {
+   export namespace Example {
      export function hello() {
        return "Hello, world!";
      }
    }
    ```
 
-   That you can use across other packages using.
+   You can import it from any other package.
 
    ```ts
-   import { Example } from "@aws-monorepo/core/example";
+   import { Example } from "@monorepo-template/core/example";
 
    Example.hello();
    ```
@@ -55,7 +59,7 @@ This template uses [npm Workspaces](https://docs.npmjs.com/cli/v8/using-npm/work
    We also have [Vitest](https://vitest.dev/) configured for testing this package with the `sst shell` CLI.
 
    ```bash
-   npm test
+   npm test -w packages/core
    ```
 
 2. `functions/`
@@ -67,7 +71,7 @@ This template uses [npm Workspaces](https://docs.npmjs.com/cli/v8/using-npm/work
     This is for any scripts that you can run on your SST app using the `sst shell` CLI and [`tsx`](https://www.npmjs.com/package/tsx). For example, you can run the example script using:
 
    ```bash
-   npm run shell src/example.ts
+   npm run shell -w packages/scripts -- src/example.ts
    ```
 
 ### Infrastructure
