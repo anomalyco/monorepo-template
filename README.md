@@ -28,10 +28,6 @@ A template to create a monorepo SST v4 project. [Learn more](https://sst.dev/doc
 
 5. Optionally, enable [_git push to deploy_](https://sst.dev/docs/console/#autodeploy).
 
-### Upgrading from v3
-
-If you deployed this template on SST v3, update `sst` to v4 and run `npx sst refresh` for each stage before you deploy. See the [v3 to v4 migration guide](https://sst.dev/docs/migrate-from-v3).
-
 ## Usage
 
 This template uses [npm Workspaces](https://docs.npmjs.com/cli/v8/using-npm/workspaces). It has 3 packages to start with and you can add more to it.

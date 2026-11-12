@@ -4,9 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {},
   "devDependencies": {
     "@tsconfig/node24": "^24",
+    "@types/node": "^24",
     "typescript": "^5"
   },
   "dependencies": {

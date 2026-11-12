@@ -10,7 +10,6 @@
     "shell": "sst shell tsx"
   },
   "devDependencies": {
-    "@types/node": "^24",
     "tsx": "^4"
   }
 }

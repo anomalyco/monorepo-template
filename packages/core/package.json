@@ -6,10 +6,7 @@
     "test": "sst shell vitest"
   },
   "exports": {
-    "./*": [
-      "./src/*/index.ts",
-      "./src/*.ts"
-    ]
+    "./*": "./src/*/index.ts"
   },
   "dependencies": {
     "sst": "*"
